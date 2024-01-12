@@ -23,23 +23,41 @@ This package is a support package to the [bug-algorithm-using-action-server pack
 └── CMakeList.txt
 └── package.xml
 ```
-Let us briefly go through each file in order to understand the working of action server: 
+Let us briefly go through each file. 
 
------------------------
+
+## Action Server
 
 ### `planner.action`: 
-Contains:
 
 `geometry_msgs/PoseStamped target_pose`: the goal of the action server. This is set by the action-client
 
 `geometry_msgs/Pose actual_pose` and `string stat`: the feedback of the action-server. This is returned continously by the action server when the action is is progress. 
-
+#### Description
 This is an action message which is used as a data interface when communicating with the action server. It contains the three parts (seperated by three hyphins "---" and in-order):
 1. goal (`target_pose`): the goal pose.
 2. result (`None`): The result of the action-server. We do not use this in our context. It can although be used to flag success when robot reaches goal.
 3. feedback (`actual_pose, stat`): The actual pose of the robot and stats related to it.
------------------------
+   
+## Nodes and services
 
+### `scripts/bug_as.py`
+
+### `scripts/go_to_point_service.py`
+
+### `scripts/wall_follow_service.py`
+
+## Launch files:
+ 
+### `launch/assignment1.launch`
+
+#### Description
+
+### `launch/sim1.launch`
+ 
+ 
+
+### `launch/assignment1.launch`
 
 
 
