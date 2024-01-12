@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find assignment_2_2023)/launch/assignment1.launch" />
+    <node pkg="monitoring_package" type="planning_client.py" name="planning_client" />
+</launch>
+
