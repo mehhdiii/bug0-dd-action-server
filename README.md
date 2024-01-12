@@ -1,6 +1,11 @@
-This package is a support package to the [bug-algorithm-using-action-server package](https://github.com/CarmineD8/assignment_2_2023) developed by [Dr. Carmine Recchiuto](https://rubrica.unige.it/personale/UkNDWV1r). This support package is useful to set goal pose and monitoring of the states of the planner package. A brief description the planner package is given below, along with how the monitoring package can be compiled and used alongside it:
+This package is a support package to the [bug-algorithm-using-action-server package](https://github.com/CarmineD8/assignment_2_2023) developed by [Dr. Carmine Recchiuto](https://rubrica.unige.it/personale/UkNDWV1r). This support package is useful to set goal pose and monitoring of the states of the planner package. A brief description the packages is given below, along with compiling and running the simulation:
 
-## Planner Package: Bug Algorithm Using Action Server 
+# Package Organization
+Just to be clear, there are two seperate packages being discussed here: 
+1. bug algorithm using action server [package](https://github.com/CarmineD8/assignment_2_2023)
+2. monitoring_package (this repository)
+
+# Planner Package: Bug Algorithm Using Action Server 
 [This](https://github.com/CarmineD8/assignment_2_2023) package implements the bug0 algorithm on ROS noetic. The folder structure is described as follows:
 
 ```
@@ -39,7 +44,7 @@ This is an action message which is used as a data interface when communicating w
 2. result (`None`): The result of the action-server. We do not use this in our context. It can although be used to flag success when robot reaches goal.
 3. feedback (`actual_pose, stat`): The actual pose of the robot and stats related to it.
    
-## Nodes and services
+## ROS Nodes and services
 
 ### `scripts/bug_as.py`
 
@@ -55,9 +60,21 @@ This is an action message which is used as a data interface when communicating w
 
 ### `launch/sim1.launch`
  
- 
+## catkin Package files
+- `CMakeList.txt`
+- `package.xml`
 
-### `launch/assignment1.launch`
+The above are standard package files for describing build and runtime dependencies. More details can be found on [ros-wiki](https://wiki.ros.org/ROS/Tutorials/CreatingPackage)
 
 
+# Monitoring Package
 
+## Action Client
+
+## ROS Nodes
+
+## Launch file
+
+# Simulation pseudo code
+
+# Compiling using docker
