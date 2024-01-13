@@ -74,14 +74,15 @@ cd path_to_your_workspace
 ```
 source devel/setup.bash
 ```
-``
+```
 cd src && git clone https://github.com/mehhdiii/monitoring_package && git clone https://github.com/CarmineD8/assignment_2_2023
-``
+```
 Finally, in order to run the simulation, use: 
 ```
 roslaunch monitoring_package start_monitoring.launch
 ```
-
+-------------------------------------------------------------------------------------------------------------------
+Additonal explainations: 
 # Planner Package: Bug Algorithm Using Action Server 
 [This](https://github.com/CarmineD8/assignment_2_2023) package implements the bug0 algorithm on ROS noetic. The folder structure is described as follows:
 
