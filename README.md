@@ -1,4 +1,4 @@
-This package is a support package to the [bug-algorithm-using-action-server package](https://github.com/CarmineD8/assignment_2_2023) developed by [Dr. Carmine Recchiuto](https://rubrica.unige.it/personale/UkNDWV1r). This support package is useful to set goal pose and monitoring of the states of the planner package. A brief description the packages is given below, along with compiling and running the simulation:
+This package is a support package to the [bug-algorithm-using-action-server package](https://github.com/CarmineD8/assignment_2_2023) developed by [Dr. Carmine Recchiuto](https://rubrica.unige.it/personale/UkNDWV1r). This support package is useful to set goal pose and monitoring of the states of bug0-planner package. A brief description of the packages is given below, along with instructions for compiling and running the simulation:
 
 # Package Organization
 Just to be clear, there are two seperate packages being discussed here: 
