@@ -2,14 +2,28 @@ This package is a support package to the [bug-algorithm-using-action-server pack
 
 # Package Organization
 Just to be clear, there are two seperate packages being discussed here: 
-1. bug algorithm using action server [package](https://github.com/CarmineD8/assignment_2_2023)
-2. monitoring_package (this repository)
+1. bug0-package: bug algorithm using action server [package](https://github.com/CarmineD8/assignment_2_2023)
+2. monitoring_package: this repository
 
 # Monitoring Package
 
 ## Action Client
 
-## ROS Nodes
+This node consumes Action Server implemented in [bug0-package](https://github.com/CarmineD8/assignment_2_2023). It is responsible to set target position of the robot. Additionally, it also subscribes to odometry data and publishes robot's current position and velocity. Details are as follows: 
+
+`planning_client()`: 
+
+function which sends target pose to the action server. It waits for the action server to be ready, and then sends the goal pose.
+
+`initialize_publisher_subscriber()`: 
+
+funciton which initializes publisher (on topic: `current_pose_velocity_publisher`) and subscriber (on topic: `/odom`). 
+
+`publishPoseAndVelocity(msg)`: 
+
+Callback function to the subscriber (topic: `/odom`) which also publishes current pose of the robot on the topic `current_pose_velocity_publisher`.
+
+## ROS Services
 
 ## Launch file
 
@@ -63,17 +77,16 @@ This is an action message which is used as a data interface when communicating w
 This node is responsible for the implementation of the bug0 algorithm. It takes in environment information, and switches between go_to_point_service and wall_follower_service. 
 
 ### `scripts/go_to_point_service.py`
+Moves the robot towards the target point when no obstacle between robot and target.
 
 ### `scripts/wall_follow_service.py`
+Makes the robot such that it follows a wall. 
 
 ## Launch files:
  
 ### `launch/assignment1.launch`
+launches relevant nodes (bug0, go_to_point, wall_follower, gazebo, rviz) for the simulation
 
-#### Description
-
-### `launch/sim1.launch`
- 
 ## catkin Package files
 - `CMakeList.txt`
 - `package.xml`
