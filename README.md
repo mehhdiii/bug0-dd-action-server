@@ -7,7 +7,7 @@ Just to be clear, there are two seperate packages being discussed here:
 
 # Monitoring Package
 
-## Action Client
+## Action Client (`planning_client.py`)
 
 This node consumes Action Server implemented in [bug0-package](https://github.com/CarmineD8/assignment_2_2023). It is responsible to set target position of the robot. Additionally, it also subscribes to odometry data and publishes robot's current position and velocity. Details are as follows: 
 
@@ -25,7 +25,19 @@ Callback function to the subscriber (topic: `/odom`) which also publishes curren
 
 ## ROS Services
 
+### `last_target.py`
+Returns last target from the parameter server.  
+
+### `distance_from_client.py`
+Returns distance (from current robot pose to the target) and average velocity of the robot. 
+
 ## Launch file
+### `start_monitoring.launch`
+Launches the following: 
+1. `assignment1.launch`: A launch file in the bug0 package, which starts the gazebo, rviz and relevant nodes for bug0.
+2. `planning_client.py`
+3. `last_target.py`
+4. `distance_from_client.py`  
 
 # Simulation pseudo code
 
