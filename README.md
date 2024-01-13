@@ -24,7 +24,7 @@ distance_from_client:
       1. lastTarget = lastTargetService.getLastTargetSentToActionServer()
       2. newPose, currentVelocity = distanceFromClientService.getCurrentPoseAndVelocityOfRobot()
       3. distance_to_goal = calculateDistance(lastTarget, newPose)
-      4. avg_x_vel, avg_y_vel = (avg_x_vel+currentVelocity.x)/2, (avg_y_vel+currentVelocity.y)/2
+      4. avg_x_vel, avg_y_vel = (avg_x_vel+abs(currentVelocity.x))/2, (avg_y_vel+abs(currentVelocity.y))/2
       5. store distance_to_goal, avg_x_vel, avg_y_vel in global variables.
 2. If the service get_distance_and_avg_velocity is called:
       1. return distance_to_goal, avg_x_vel, avg_y_vel
