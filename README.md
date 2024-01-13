@@ -16,11 +16,11 @@ planning_client:
       1. currentPoseVelocityPublisher.publish(topicName='current_pose_velocity_publisher', receivedPose)
 
 last_target: 
-1. If the service named get_last_target is called:
+1. If the service get_last_target is called:
       1. return parameterServer.get_param(des_pos_x, des_pos_y) 
 
 distance_from_client: 
-1. Each time a new pose is received, do:
+1. Each time a new pose is received(topicName='current_pose_velocity_publisher'), do:
       1. lastTarget = lastTargetService.getLastTargetSentToActionServer()
       2. newPose, currentVelocity = distanceFromClientService.getCurrentPoseAndVelocityOfRobot()
       3. distance_to_goal = calculateDistance(lastTarget, newPose)
