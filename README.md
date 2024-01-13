@@ -64,7 +64,23 @@ Launches the following:
 4. `distance_from_client.py`  
 
 # Compiling using docker
-
+Create a standard Catkin Workspace and clone the following packages inside `/src`: 
+1. this repository (https://github.com/mehhdiii/monitoring_package)
+2. action server (https://github.com/CarmineD8/assignment_2_2023)
+To perform the above steps run the following commands:
+```
+mkdir assignment_ws && cd assignment_ws && catkin_init 
+```
+```
+source devel/setup.bash
+```
+``
+cd src && git clone https://github.com/mehhdiii/monitoring_package && git clone https://github.com/CarmineD8/assignment_2_2023
+``
+Finally, in order to run the simulation, use: 
+```
+roslaunch monitoring_package start_monitoring.launch
+```
 
 # Planner Package: Bug Algorithm Using Action Server 
 [This](https://github.com/CarmineD8/assignment_2_2023) package implements the bug0 algorithm on ROS noetic. The folder structure is described as follows:
