@@ -7,6 +7,30 @@ Just to be clear, there are two seperate packages being discussed here:
 
 # Monitoring Package
 
+# Simulation pseudo code
+```
+planning_client: 
+1. await actionServer.IsInitialized() 
+2. actionClient.sendGoalToActionServer(x_goal, y_goal).
+3. For each Pose received on the topic \odom, do:
+      1. currentPoseVelocityPublisher.publish(topicName='current_pose_velocity_publisher', receivedPose)
+
+last_target: 
+1. If the service named get_last_target is called:
+      1. return parameterServer.get_param(des_pos_x, des_pos_y) 
+
+distance_from_client: 
+1. Each time a new pose is received, do:
+      1. lastTarget = lastTargetService.getLastTargetSentToActionServer()
+      2. newPose, currentVelocity = distanceFromClientService.getCurrentPoseAndVelocityOfRobot()
+      3. distance_to_goal = calculateDistance(lastTarget, newPose)
+      4. avg_x_vel, avg_y_vel = (avg_x_vel+currentVelocity.x)/2, (avg_y_vel+currentVelocity.y)/2
+      5. store distance_to_goal, avg_x_vel, avg_y_vel in global variables.
+2. If the service get_distance_and_avg_velocity is called:
+      1. return distance_to_goal, avg_x_vel, avg_y_vel
+```
+
+
 ## Action Client (`planning_client.py`)
 
 This node consumes Action Server implemented in [bug0-package](https://github.com/CarmineD8/assignment_2_2023). It is responsible to set target position of the robot. Additionally, it also subscribes to odometry data and publishes robot's current position and velocity. Details are as follows: 
@@ -38,8 +62,6 @@ Launches the following:
 2. `planning_client.py`
 3. `last_target.py`
 4. `distance_from_client.py`  
-
-# Simulation pseudo code
 
 # Compiling using docker
 
@@ -92,7 +114,7 @@ This node is responsible for the implementation of the bug0 algorithm. It takes 
 Moves the robot towards the target point when no obstacle between robot and target.
 
 ### `scripts/wall_follow_service.py`
-Makes the robot such that it follows a wall. 
+Makes the robot follow a wall in front of it. 
 
 ## Launch files:
  
