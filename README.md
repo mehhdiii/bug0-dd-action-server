@@ -69,7 +69,7 @@ Create a standard Catkin Workspace (assuming you have full-desktop installation 
 2. action server (https://github.com/CarmineD8/assignment_2_2023)
 To perform the above steps run the following commands:
 ```
-mkdir assignment_ws && cd assignment_ws && catkin_init 
+cd path_to_your_workspace
 ```
 ```
 source devel/setup.bash
