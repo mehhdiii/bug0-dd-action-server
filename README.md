@@ -81,7 +81,7 @@ Finally, in order to run the simulation, use:
 ```
 roslaunch monitoring_package start_monitoring.launch
 ```
-To see the distance_to_target and average velocity of the robot: 
+To see the `distance_to_target` and `average_velocity` of the robot: 
 ```
 rosservice call /get_distance_and_avg_velocity
 ```
