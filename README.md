@@ -5,6 +5,19 @@ Just to be clear, there are two seperate packages being discussed here:
 1. bug algorithm using action server [package](https://github.com/CarmineD8/assignment_2_2023)
 2. monitoring_package (this repository)
 
+# Monitoring Package
+
+## Action Client
+
+## ROS Nodes
+
+## Launch file
+
+# Simulation pseudo code
+
+# Compiling using docker
+
+
 # Planner Package: Bug Algorithm Using Action Server 
 [This](https://github.com/CarmineD8/assignment_2_2023) package implements the bug0 algorithm on ROS noetic. The folder structure is described as follows:
 
@@ -47,6 +60,7 @@ This is an action message which is used as a data interface when communicating w
 ## ROS Nodes and services
 
 ### `scripts/bug_as.py`
+This node is responsible for the implementation of the bug0 algorithm. It takes in environment information, and switches between go_to_point_service and wall_follower_service. 
 
 ### `scripts/go_to_point_service.py`
 
@@ -66,15 +80,3 @@ This is an action message which is used as a data interface when communicating w
 
 The above are standard package files for describing build and runtime dependencies. More details can be found on [ros-wiki](https://wiki.ros.org/ROS/Tutorials/CreatingPackage)
 
-
-# Monitoring Package
-
-## Action Client
-
-## ROS Nodes
-
-## Launch file
-
-# Simulation pseudo code
-
-# Compiling using docker
