@@ -64,7 +64,7 @@ Launches the following:
 4. `distance_from_client.py`  
 
 # Compiling and using this package
-Create a standard Catkin Workspace (assuming you have full-desktop installation of ros noetic. For using docker, refer to [this](https://hub.docker.com/r/carms84/noetic_ros2) docker image [credits: Dr. Carmine]) and clone the following packages inside `/src`: 
+[Create a standard Catkin Workspace](https://wiki.ros.org/catkin/Tutorials/create_a_workspace) (assuming you have full-desktop installation of ros noetic. For using docker, refer to [this](https://hub.docker.com/r/carms84/noetic_ros2) docker image [credits: Dr. Carmine]) and clone the following packages inside `/src`: 
 1. this repository (https://github.com/mehhdiii/monitoring_package)
 2. action server (https://github.com/CarmineD8/assignment_2_2023)
 
