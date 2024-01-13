@@ -5,6 +5,9 @@ from monitoring_package.srv import pose, poseResponse
 lastTarget = None
 
 def getLastTarget(request):
+    """
+        Fetches target pose from the parameter server and returns when service is called.
+    """
     global lastTarget
     xGoal = rospy.get_param('des_pos_x')
     yGoal = rospy.get_param('des_pos_y')

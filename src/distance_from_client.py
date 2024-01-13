@@ -11,6 +11,12 @@ v_avg_y = None
 dist = None
 
 def getGoal(x_current, y_current, v_current_x, v_current_y):
+    """
+         Calculates and returns the following:
+             1. the distance between pose_current and pose_target. 
+             2. average velocity of the robot 
+    """
+
     global v_avg_x, v_avg_y
     rospy.wait_for_service('/get_last_target')
     
@@ -29,6 +35,9 @@ def getGoal(x_current, y_current, v_current_x, v_current_y):
     return distance, v_avg_x, v_avg_y
 
 def currentPoseHandler(data):
+    """
+        Handler to the subscriber current_pose_velocity_publisher. It receives current pose and velocity of robot and uses GetGoal function to update distance, v_average global variables
+    """
     global v_avg_x, v_avg_y, dist
     x_current = data.x
     y_current = data.y
@@ -37,6 +46,9 @@ def currentPoseHandler(data):
     dist, v_avg_x, v_avg_y = getGoal(x_current, y_current, vel_x, vel_y)
 
 def getDistanceAndAvgVelocity(request):
+    """
+        triggers when a call to the service is made. returns global variables which store average velocity and distance to target.
+    """
     global v_avg_x, v_avg_y, dist
     return distanceAndAverageVelocityResponse(dist, v_avg_x, v_avg_y)
 

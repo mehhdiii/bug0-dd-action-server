@@ -28,6 +28,9 @@ def planning_client():
     client.send_goal(goal)
 
 def publishPoseAndVelocity(msg):
+    """
+        Handler for the subscriber for /odom. This function receives odom.message and publishes pose and velocity from it on the topic current_pose_velocity_publisher.
+    """
     poseVelocityMsg = poseVelocity()
     poseVelocityMsg.x = msg.pose.pose.position.x
     poseVelocityMsg.y = msg.pose.pose.position.y
@@ -36,6 +39,9 @@ def publishPoseAndVelocity(msg):
     poseVelocityPublisher.publish(poseVelocityMsg)
 
 def initialize_publisher_subscriber():
+    """
+        initializes the publishr and subscriber and stores them in a global variable.
+    """
     global poseVelocityPublisher, poseVelocitySubscriber
     poseVelocityPublisher = rospy.Publisher('current_pose_velocity_publisher', poseVelocity)
     poseVelocitySubscriber = rospy.Subscriber('/odom', Odometry, publishPoseAndVelocity)
