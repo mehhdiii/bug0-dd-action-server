@@ -62,6 +62,7 @@ add_message_files(
    FILES
    pose.srv
    distanceAndAverageVelocity.srv
+   cancelgoal.srv
 #   Service1.srv
 #   Service2.srv
  )

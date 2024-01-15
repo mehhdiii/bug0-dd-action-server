@@ -5,5 +5,6 @@
     <node pkg="monitoring_package" type="last_target.py" name="last_target" args="" />
     <node pkg="monitoring_package" type="distance_from_client.py" name="distance_from_client" args=""/>
     <node pkg="monitoring_package" type="feet_pose_pubisher.py" name="feet_pose_pubisher" args=""/>
+    <node pkg="monitoring_package" type="goal_canceller.py" name="goal_canceller" args=""/>
 </launch>
 
